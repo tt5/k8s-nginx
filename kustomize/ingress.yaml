@@ -9,12 +9,12 @@ spec:
     secretName: civo-ingress-tls
   rules:
     - host: e25905be-fd85-4059-b948-8258536c8b5f.k8s.civo.com
-    http:
-      paths:
-      - backend:
-          service:
-            name: nginx
-            port:
-              number: 8080
-        path: /nginx
-        pathType: Prefix
+      http:
+        paths:
+        - backend:
+            service:
+              name: nginx
+              port:
+                number: 8080
+          path: /nginx
+          pathType: Prefix
