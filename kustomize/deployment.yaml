@@ -19,6 +19,9 @@ spec:
           image: nginx
           ports:
           - containerPort: 8080
+          volumeMounts:
+            - name: shared
+              mountPath: /usr/share/nginx/html
       initContainers:
         - name: install
           image: busybox
