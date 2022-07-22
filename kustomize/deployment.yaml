@@ -19,3 +19,17 @@ spec:
           image: nginx
           ports:
           - containerPort: 8080
+      initContainers:
+        - name: install
+          image: busybox
+          command:
+            - wget
+            - "-O"
+            - "/shared/index.html"
+            - https://first.tt5.workers.dev/
+          volumeMounts:
+            - name: shared
+              mountPath: /shared
+      volumes:
+        - name: shared
+          emptyDir: {}
