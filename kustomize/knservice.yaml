@@ -1,0 +1,31 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/min-scale: "1"
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          volumeMounts:
+            - name: shared
+              mountPath: /usr/share/nginx/html
+      initContainers:
+        - name: install
+          image: busybox
+          command:
+            - wget
+            - "-O"
+            - "/shared/index.html"
+            - https://first.tt5.workers.dev/
+          volumeMounts:
+            - name: shared
+              mountPath: /shared
+      volumes:
+        - name: shared
+          emptyDir: {}
