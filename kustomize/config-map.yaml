@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: nginx-conf
 data:
-  nginx.conf: |
+  nginx.conf: |-
     user nginx;
     worker_processes  1;
     events {
@@ -14,7 +14,7 @@ data:
           listen       80;
           server_name  localhost;
           location / {
-            proxy_pass https://first.tt5.workers.dev
+            proxy_pass https://first.tt5.workers.dev;
         }
       }
     }
