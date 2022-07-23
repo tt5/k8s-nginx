@@ -11,8 +11,8 @@ data:
     }
     http {
       server {
-          listen       80;
-          server_name  localhost;
+          listen 80 default_server;
+          server_name _;
           location / {
             proxy_pass https://first.tt5.workers.dev;
         }
