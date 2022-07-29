@@ -12,7 +12,7 @@ data:
     http {
       server {
           listen 80;
-          server_name "http://first.tt5.workers.dev";
+          server_name http://first.tt5.workers.dev;
           location / {
             proxy_pass first.tt5.workers.dev;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
