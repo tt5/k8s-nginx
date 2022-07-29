@@ -27,7 +27,7 @@ data:
           proxy_pass http://first.tt5.workers.dev;
         }
         location ^~ /services/nav {
-          rewrite ^/service/nav / break;
+          rewrite ^/services/nav / break;
           proxy_pass http://nav.tt5.workers.dev;
         }
       }
