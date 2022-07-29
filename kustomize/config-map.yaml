@@ -26,7 +26,7 @@ data:
         location / {
             proxy_pass http://first.tt5.workers.dev;
         }
-        location /service/nav {
+        location /services/nav {
             proxy_pass http://nav.tt5.workers.dev;
         }
       }
