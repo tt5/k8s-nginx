@@ -23,11 +23,11 @@ data:
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header Host $proxy_host;
-        location /services/nav {
-          proxy_pass http://nav.tt5.workers.dev;
-        }
-        location / {
+        location ^~ / {
           proxy_pass http://first.tt5.workers.dev;
+        }
+        location ^~ /services/nav {
+          proxy_pass http://nav.tt5.workers.dev;
         }
       }
     }
