@@ -4,6 +4,7 @@ metadata:
   name: nginx-conf
 data:
   nginx.conf: |-
+    proxy_cache_path /var/cache/nginx levels:1:2 keys_zone=my_cache:1M max_size=1g inactive=1m use_tmp_path=off;
     user nginx;
     worker_processes  1;
     events {
@@ -14,6 +15,12 @@ data:
           listen 80;
           server_name first.tt5.workers.dev;
           location / {
+            proxy_cache my_cache;
+            #proxy_cache_revalidate on;
+            proxy_cache_background_update on;
+            proxy_cache_lock on;
+            proxy_ignore_headers Cache-Control;
+            proxy_cache_valid any 1m;
             proxy_pass http://first.tt5.workers.dev;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Real-IP $remote_addr;
