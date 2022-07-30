@@ -15,10 +15,11 @@ data:
         server_name nginx.default.hello123.tk;
         #listen 80;
         listen 443 ssl;
-        ssl_ciphers HIGH:!aNULL:!MD5;
-        ssl_prefer_server_ciphers on;
         ssl_certificate /etc/nginx/nginx.crt;
         ssl_certificate_key /etc/nginx/nginx.key;
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers HIGH:!aNULL:!MD5;
+        #ssl_prefer_server_ciphers on;
 
         proxy_cache my_cache;
         #proxy_cache_revalidate on;
