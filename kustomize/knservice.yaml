@@ -19,9 +19,6 @@ spec:
             mountPath: /etc/nginx/nginx.conf
             subPath: nginx.conf
             readOnly: true
-          - name: nginx-ssl
-            mountPath: /etc/nginx/ssl
-            readOnly: true
       volumes:
       - name: nginx-conf
         configMap:
@@ -29,6 +26,3 @@ spec:
           items:
             - key: nginx.conf
               path: nginx.conf
-      - name: nginx-ssl
-        secret:
-          secretName: nginx-ssl
