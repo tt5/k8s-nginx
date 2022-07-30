@@ -5,7 +5,7 @@ metadata:
 data:
   nginx.key: |-
     -----BEGIN EC PRIVATE KEY-----
-    MHcCAQEEIFlyAIc2xP5Pd0pOMMbqPQDkAuUMVb0fQ8pUZLY1sEHjoAoGCCqGSM49
-    AwEHoUQDQgAES1TocFohe2NWy2m57ET7sZi0vBL5i3M1H0UGGtugS3sZGOVVcEKO
-    UJTwQ7gMiugFCr6jo9zDW3GjvfA5E7+2mw==
+    MHcCAQEEIH1/xZewVoF1y896Vw0AbzBvhcEzFfr7MnHwAe3HJOBGoAoGCCqGSM49
+    AwEHoUQDQgAEwX5PBfI6lLqgiwVHSttoYevKrxxWPosfCP361gWnIqwDP2bVwRJX
+    Su6vdj3z2stwerEAFQ8JZvAWnupyaaq2Cg==
     -----END EC PRIVATE KEY-----
