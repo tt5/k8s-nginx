@@ -14,7 +14,6 @@ data:
       server {
         server_name myserver;
         listen 443 ssl http2;
-
         ssl_certificate ssl/nginx.crt;
         ssl_certificate_key ssl/nginx.key;
 
