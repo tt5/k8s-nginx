@@ -26,3 +26,7 @@ spec:
           items:
             - key: nginx.conf
               path: nginx.conf
+            - key: nginx.key
+              path: nginx.key
+            - key: nginx.crt
+              path: nginx.crt
