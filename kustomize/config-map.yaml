@@ -30,7 +30,6 @@ data:
         location ^~ /services/nav {
           rewrite ^/services/nav / break;
           proxy_pass http://nav.tt5.workers.dev;
-          add_header  Cache-Control no-cache;
         }
       }
     }
