@@ -1,0 +1,48 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/min-scale: "1"
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 443
+        volumeMounts:
+          - name: nginx-conf
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+            readOnly: true
+          - name: nginx-key
+            mountPath: /etc/nginx/nginx.key
+            subPath: nginx.key
+            readOnly: true
+          - name: nginx-crt
+            mountPath: /etc/nginx/nginx.crt
+            subPath: nginx.crt
+            readOnly: true
+      volumes:
+      - name: nginx-conf
+        configMap:
+          name: nginx-conf
+          items:
+            - key: nginx.conf
+              path: nginx.conf
+      - name: nginx-key
+        configMap:
+          name: nginx-key
+          items:
+            - key: nginx.key
+              path: nginx.key
+      - name: nginx-crt
+        configMap:
+          name: nginx-crt
+          items:
+            - key: nginx.crt
+              path: nginx.crt
