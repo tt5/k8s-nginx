@@ -14,7 +14,6 @@ spec:
     - "hello123.tk"
   - port:
       number: 443
-      name: 443
       name: https
       protocol: HTTPS
     tls:
