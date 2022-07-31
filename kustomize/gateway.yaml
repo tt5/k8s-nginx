@@ -11,4 +11,14 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - hello123.tk
+    - "hello123.tk"
+  - port:
+      number: 443
+      name: 443
+      name: https
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: domain-cert
+    hosts:
+    - "hello123.tk"
