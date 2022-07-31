@@ -7,17 +7,10 @@ spec:
     istio: ingressgateway
   servers:
   - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "hello123.tk"
-  - port:
       number: 443
       name: https
       protocol: HTTPS
     tls:
-      mode: SIMPLE
-      credentialName: domain-cert
+      mode: PASSTHROUGH
     hosts:
     - "hello123.tk"

@@ -6,8 +6,8 @@ metadata:
     app: nginx
 spec:
   ports:
-  - name: http
+  - name: https
     port: 8080
-    targetPort: 80
+    targetPort: 443
   selector:
     app: nginx
