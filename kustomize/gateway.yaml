@@ -7,11 +7,8 @@ spec:
     istio: ingressgateway
   servers:
   - port:
-      number: 443
-      name: https
-      protocol: HTTPS
+      number: 80
+      name: http
+      protocol: HTTP
     hosts:
-    - nginx.default.hello123.tk
-    tls:
-      mode: SIMPLE
-      credentialName: route-189aadfc-9c87-439c-978d-e83f5a0bcf74
+    - hello123.tk

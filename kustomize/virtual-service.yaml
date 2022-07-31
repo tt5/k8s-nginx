@@ -4,7 +4,7 @@ metadata:
   name: ext-access
 spec:
   hosts:
-  - nginx.default.hello123.tk
+  - hello123.tk
   gateways:
   - my-gateway
   http:
