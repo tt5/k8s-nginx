@@ -13,7 +13,7 @@ spec:
       - name: nginx
         image: nginx
         ports:
-        - containerPort: 443
+        - containerPort: 80
         volumeMounts:
           - name: nginx-conf
             mountPath: /etc/nginx/nginx.conf
