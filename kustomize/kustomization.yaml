@@ -3,9 +3,3 @@ kind: Kustomization
 resources:
   - knservice.yaml
   - config-map.yaml
-  - config-map-key.yaml
-  - config-map-crt.yaml
-  - service.yaml
-  - deployment.yaml
-  - gateway.yaml
-  - virtual-service.yaml
