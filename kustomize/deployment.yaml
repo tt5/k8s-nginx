@@ -22,6 +22,18 @@ spec:
           volumeMounts:
             - name: shared
               mountPath: /usr/share/nginx/html
+            - name: nginx-conf
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+              readOnly: true
+            - name: nginx-key
+              mountPath: /etc/nginx/nginx.key
+              subPath: nginx.key
+              readOnly: true
+            - name: nginx-crt
+              mountPath: /etc/nginx/nginx.crt
+              subPath: nginx.crt
+              readOnly: true
       initContainers:
         - name: install
           image: busybox
@@ -36,3 +48,21 @@ spec:
       volumes:
         - name: shared
           emptyDir: {}
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf
+            items:
+              - key: nginx.conf
+                path: nginx.conf
+        - name: nginx-key
+          configMap:
+            name: nginx-key
+            items:
+              - key: nginx.key
+                path: nginx.key
+        - name: nginx-crt
+          configMap:
+            name: nginx-crt
+            items:
+              - key: nginx.crt
+                path: nginx.crt

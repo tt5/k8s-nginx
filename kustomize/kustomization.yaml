@@ -1,7 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - knservice.yaml
   - config-map.yaml
   - config-map-crt.yaml
   - config-map-key.yaml
+  - gateway.yaml
+  - virtual-service.yaml
+  - service
+  - deployment
