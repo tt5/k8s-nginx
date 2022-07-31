@@ -11,4 +11,7 @@ spec:
       name: https
       protocol: HTTPS
     hosts:
-    - "*"
+    - nginx.default.hello123.tk
+    tls:
+      mode: SIMPLE
+      credentialName: route-189aadfc-9c87-439c-978d-e83f5a0bcf74
