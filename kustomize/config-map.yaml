@@ -41,7 +41,7 @@ data:
           proxy_pass http://nav.tt5.workers.dev;
         }
         location ^~ /services/alpinejs {
-          index alpine.js;
+          root /usr/share/nginx/html;
         }
       }
     }
