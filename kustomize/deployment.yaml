@@ -37,12 +37,18 @@ spec:
       initContainers:
         - name: install
           image: busybox
-          command:
-            - wget
+          command: ["sh"]
+          args:
+            - "-c"
+            - "wget"
             - "-O"
             - "/shared/index.html"
-            - https://first.tt5.workers.dev/
-            - https://unpkg.com/services/alpinejs /alpinejs@3.10.3/cdn.min.js;
+            - "https://first.tt5.workers.dev/"
+            - ";"
+            - "wget"
+            - "-O"
+            - "/shared/alpine.js"
+            - "https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
           volumeMounts:
             - name: shared
               mountPath: /shared
