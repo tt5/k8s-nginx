@@ -21,7 +21,7 @@ spec:
           - containerPort: 443
           volumeMounts:
             - name: shared
-              mountPath: /usr/share/nginx/
+              mountPath: /usr/share/nginx/html/
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
