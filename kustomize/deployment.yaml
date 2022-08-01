@@ -42,7 +42,7 @@ spec:
             - "-O"
             - "/shared/index.html"
             - https://first.tt5.workers.dev/
-            - &&
+            - "&&"
             - wget
             - "-O"
             - "/shared/alpine.js"
