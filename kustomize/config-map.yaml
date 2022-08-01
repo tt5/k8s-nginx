@@ -34,15 +34,11 @@ data:
         location ^~ / {
           proxy_pass http://first.tt5.workers.dev;
           http2_push /services/nav;
+          http2_push alpine.js;
         }
         location ^~ /services/nav {
           rewrite ^/services/nav / break;
           proxy_pass http://nav.tt5.workers.dev;
         }
-        location ^~ /services/alpinejs {
-          rewrite ^/services/alpinejs /alpinejs@3.10.3/cdn.min.js break;
-          proxy_pass https://unpkg.com;
-        }
-
       }
     }

@@ -42,6 +42,11 @@ spec:
             - "-O"
             - "/shared/index.html"
             - https://first.tt5.workers.dev/
+            - &&
+            - wget
+            - "-O"
+            - "/shared/alpine.js"
+            - https://unpkg.com/services/alpinejs /alpinejs@3.10.3/cdn.min.js;
           volumeMounts:
             - name: shared
               mountPath: /shared
