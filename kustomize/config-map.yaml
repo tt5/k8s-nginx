@@ -36,7 +36,8 @@ data:
           http2_push /services/nav;
           http2_push /services/alpinejs;
         }
-        location ^~ /services/alpine.js {
+        location ^~ /services/alpinejs {
+          rewrite ^/services/alpinejs /alpine.js break;
           root /usr/share/nginx/html;
         }
         location ^~ /services/nav {
