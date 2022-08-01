@@ -36,12 +36,12 @@ data:
           http2_push /services/nav;
           http2_push /services/alpinejs;
         }
+        location ^~ /services/alpine.js {
+          root /usr/share/nginx/html;
+        }
         location ^~ /services/nav {
           rewrite ^/services/nav / break;
           proxy_pass http://nav.tt5.workers.dev;
-        }
-        location ^~ /services/alpinejs {
-          root /usr/share/nginx/html;
         }
       }
     }
