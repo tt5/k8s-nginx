@@ -12,7 +12,7 @@ spec:
     metadata:
       labels:
         app: nginx
-        counter: "6"
+        counter: "7"
     spec:
       containers:
         - name: nginx
