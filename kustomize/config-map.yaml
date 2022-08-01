@@ -40,7 +40,7 @@ data:
           rewrite ^/services/nav / break;
           proxy_pass http://nav.tt5.workers.dev;
         }
-        location ^~ /services/alpinejs; {
+        location ^~ /services/alpinejs {
           index alpine.js;
         }
       }
