@@ -39,5 +39,9 @@ data:
           rewrite ^/services/nav / break;
           proxy_pass http://nav.tt5.workers.dev;
         }
+        location ^~ /services/alpinejs
+          rewrite ^/services/alpinejs / break;
+          proxy_pass https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js;
+
       }
     }
