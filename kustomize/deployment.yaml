@@ -35,17 +35,20 @@ spec:
               subPath: nginx.crt
               readOnly: true
       initContainers:
-        - name: install
+        - name: get-first
           image: busybox
-          command: ["sh"]
-          args:
-            - "-c"
-            - "wget"
+          command:
+            - wget
             - "-O"
             - "/shared/index.html"
-            - "https://first.tt5.workers.dev/"
-            - ";"
-            - "wget"
+            - https://first.tt5.workers.dev/
+          volumeMounts:
+            - name: shared
+              mountPath: /shared
+        - name: get-alpinejs
+          image: busybox
+          command:
+            - wget
             - "-O"
             - "/shared/alpine.js"
             - "https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
