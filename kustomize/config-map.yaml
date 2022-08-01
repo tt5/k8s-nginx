@@ -34,7 +34,7 @@ data:
         location ^~ / {
           proxy_pass http://first.tt5.workers.dev;
           http2_push /services/nav;
-          http2_push /services/alpinejs;
+          #http2_push /services/alpinejs;
         }
         location ^~ /services/alpinejs {
           rewrite ^/services/alpinejs /alpine.js break;
