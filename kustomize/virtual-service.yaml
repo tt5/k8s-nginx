@@ -7,6 +7,14 @@ spec:
   - "hello123.tk"
   gateways:
   - my-gateway
+  http:
+  - match:
+      port: 80
+    route:
+    - destination:
+        host: nginx
+        port:
+          number: 80
   tls:
   - match:
     - port: 443

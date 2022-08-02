@@ -14,3 +14,9 @@ spec:
       mode: PASSTHROUGH
     hosts:
     - "hello123.tk"
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "hello123.tk"
