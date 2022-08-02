@@ -9,7 +9,7 @@ spec:
   - my-gateway
   http:
   - match:
-      port: 80
+    - port: 80
     route:
     - destination:
         host: nginx
