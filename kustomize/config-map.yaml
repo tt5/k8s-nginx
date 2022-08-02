@@ -52,7 +52,7 @@ data:
           proxy_pass http://nav.tt5.workers.dev;
         }
         location ^~ /services/content {
-          rewrite ^/services/content / break;
+          rewrite ^/services/content(/.*) /$1 break;
           proxy_pass http://content.tt5.workers.dev;
         }
       }
