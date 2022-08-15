@@ -64,7 +64,7 @@ spec:
             - wget
             - "-O"
             - "/shared/alpha2.ttf"
-            - " https://raw.githubusercontent.com/mcroitor/chess-fonts/main/ttf/alpha2.ttf"
+            - "https://raw.githubusercontent.com/mcroitor/chess-fonts/main/ttf/alpha2.ttf"
           volumeMounts:
             - name: shared
               mountPath: /shared
