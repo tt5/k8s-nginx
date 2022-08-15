@@ -48,7 +48,7 @@ spec:
           volumeMounts:
             - name: shared
               mountPath: /shared
-        - name: get-alpinejs
+        - name: get-chessfont
           image: busybox
           command:
             - wget
