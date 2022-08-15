@@ -43,6 +43,9 @@ data:
           http2_push /services/content/home;
           http2_push /services/alpinejs;
         }
+        location ^~ /alpha2.ttf {
+          root /usr/share/nginx/html;
+        }
         location ^~ /services/alpinejs {
           rewrite ^/services/alpinejs /alpine.js break;
           root /usr/share/nginx/html;
