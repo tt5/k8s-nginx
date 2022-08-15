@@ -1,0 +1,23 @@
+***** Statistics *****
+
+Request timing:
+  responseEnd: the  time  when  last  byte of  response  was  received
+               relative to connectEnd
+ requestStart: the time  just before  first byte  of request  was sent
+               relative  to connectEnd.   If  '*' is  shown, this  was
+               pushed by server.
+      process: responseEnd - requestStart
+         code: HTTP status code
+         size: number  of  bytes  received as  response  body  without
+               inflation.
+          URI: request URI
+
+see http://www.w3.org/TR/resource-timing/#processing-model
+
+sorted by 'complete'
+
+id  responseEnd requestStart  process code size request path
+ 13    +56.26ms        +88us  56.17ms  200   2K /
+  2    +61.34ms *   +52.51ms   8.83ms  200  366 /services/nav
+  4    +62.10ms *   +52.55ms   9.55ms  200   40 /services/content/home
+  6   +213.86ms *   +52.57ms 161.29ms  200  38K /services/alpinejs

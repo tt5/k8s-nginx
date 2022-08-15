@@ -53,6 +53,16 @@ spec:
           command:
             - wget
             - "-O"
+            - "/shared/alpha2.ttf"
+            - " https://raw.githubusercontent.com/mcroitor/chess-fonts/main/ttf/alpha2.ttf"
+          volumeMounts:
+            - name: shared
+              mountPath: /shared
+        - name: get-alpinejs
+          image: busybox
+          command:
+            - wget
+            - "-O"
             - "/shared/alpine.js"
             - "https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
           volumeMounts:
