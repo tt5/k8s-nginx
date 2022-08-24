@@ -22,7 +22,7 @@ spec:
     - "hello123.tk"
   - port:
       number: 80
-      name: http
+      name: acorn-test
       protocol: HTTP
     hosts:
     - "web.green-fog.zws0sz.alpha.on-acorn.io"
