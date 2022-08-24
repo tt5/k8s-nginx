@@ -20,3 +20,9 @@ spec:
       protocol: HTTP
     hosts:
     - "hello123.tk"
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "web.green-fog.zws0sz.alpha.on-acorn.io"
