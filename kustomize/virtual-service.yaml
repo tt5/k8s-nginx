@@ -4,7 +4,7 @@ metadata:
   name: ext-access
 spec:
   hosts:
-  - "hello123.tk"
+  - "tt15551.cc"
   gateways:
   - my-gateway
   http:
@@ -19,7 +19,7 @@ spec:
   - match:
     - port: 443
       sniHosts:
-      - hello123.tk
+      - tt15551.cc
     route:
     - destination:
         host: nginx
