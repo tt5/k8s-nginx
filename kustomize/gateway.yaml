@@ -13,10 +13,10 @@ spec:
     tls:
       mode: PASSTHROUGH
     hosts:
-    - "hello123.tk"
+    - "tt15551.cc"
   - port:
       number: 80
       name: http
       protocol: HTTP
     hosts:
-    - "hello123.tk"
+    - "tt15551.cc"
