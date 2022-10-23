@@ -37,6 +37,9 @@ spec:
               mountPath: /etc/nginx/nginx.crt
               subPath: nginx.crt
               readOnly: true
+            - name: nginx-server-certs
+              mountPath: /etc/nginx-server-certs
+              readOnly: true
       initContainers:
         - name: get-first
           image: busybox
@@ -89,3 +92,6 @@ spec:
             items:
               - key: nginx.crt
                 path: nginx.crt
+        - name: nginx-server-certs
+          secret:
+            secretName: nginx-ssl
