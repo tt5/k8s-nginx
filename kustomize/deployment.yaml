@@ -4,6 +4,7 @@ metadata:
   labels:
     app: nginx
   name: nginx
+  namespace: istio-system
 spec:
   selector:
     matchLabels:
@@ -94,4 +95,4 @@ spec:
                 path: nginx.crt
         - name: nginx-server-certs
           secret:
-            secretName: nginx-ssl
+            secretName: cert-tt15551dotcc
