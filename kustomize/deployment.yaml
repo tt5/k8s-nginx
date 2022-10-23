@@ -29,14 +29,6 @@ spec:
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
               readOnly: true
-            - name: nginx-key
-              mountPath: /etc/nginx/nginx.key
-              subPath: nginx.key
-              readOnly: true
-            - name: nginx-crt
-              mountPath: /etc/nginx/nginx.crt
-              subPath: nginx.crt
-              readOnly: true
             - name: nginx-server-certs
               mountPath: /etc/nginx-server-certs
               readOnly: true
@@ -80,18 +72,6 @@ spec:
             items:
               - key: nginx.conf
                 path: nginx.conf
-        - name: nginx-key
-          configMap:
-            name: nginx-key
-            items:
-              - key: nginx.key
-                path: nginx.key
-        - name: nginx-crt
-          configMap:
-            name: nginx-crt
-            items:
-              - key: nginx.crt
-                path: nginx.crt
         - name: nginx-server-certs
           secret:
             secretName: cert-tt15551dotcc-default
