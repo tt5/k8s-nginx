@@ -61,8 +61,8 @@ data:
           proxy_pass http://content.tt5.workers.dev;
         }
         location ^~ /projects/blog-first {
-          rewrite ^/projects/content/(.*) /$1 break;
-          proxy_pass blog-first.projects.svc.cluster.local;
+          rewrite ^/projects/blog-first/(.*) /$1 break;
+          proxy_pass http://blog-first.projects.svc.cluster.local;
         }
       }
     }
