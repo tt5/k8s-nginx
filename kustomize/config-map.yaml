@@ -60,6 +60,7 @@ data:
           rewrite ^/services/content/(.*) /$1 break;
           proxy_pass http://content.tt5.workers.dev;
         }
+        resolver kube-dns.kube-system.svc.cluster.local valid=5s;
         location ^~ /projects/blog-first {
           rewrite ^/projects/blog-first/(.*) /$1 break;
           proxy_pass http://blog-first.projects.svc.cluster.local;
