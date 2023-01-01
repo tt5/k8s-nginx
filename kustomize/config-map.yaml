@@ -66,7 +66,7 @@ data:
           proxy_set_header Connection "Upgrade";
           rewrite ^/projects/blog-first/(.*) /$1 break;
           proxy_pass http://blog-first.projects.svc.cluster.local;
-
+          proxy_http_version 1.1;
         }
       }
     }
