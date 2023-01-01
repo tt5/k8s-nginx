@@ -66,5 +66,12 @@ data:
           rewrite ^/projects/blog-first/(.*) /$1 break;
           proxy_pass http://blog-first.projects.kn.tt15551.cc;
         }
+        location ^~ /public/alpine.js {
+          rewrite ^/public/alpine.js /alpine.js break;
+          root /usr/share/nginx/html;
+        }
+        location ^~ /public/base.css {
+          rewrite ^/public/base.css /projects/blog-first/public/base.css break;
+        }
       }
     }
