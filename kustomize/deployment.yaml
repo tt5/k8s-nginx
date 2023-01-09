@@ -12,7 +12,7 @@ spec:
     metadata:
       labels:
         app: nginx
-        counter: "16"
+        counter: "17"
     spec:
       containers:
         - name: nginx
@@ -34,30 +34,30 @@ spec:
               readOnly: true
       initContainers:
         - name: get-first
-          image: busybox
+          image: yauritux/busybox-curl
           command:
-            - wget
-            - "-O"
+            - curl
+            - "-o"
             - "/shared/index.html"
             - https://first.tt5.workers.dev/
           volumeMounts:
             - name: shared
               mountPath: /shared
         - name: get-alpinejs
-          image: busybox
+          image: yauritux/busybox-curl
           command:
-            - wget
-            - "-O"
+            - curl
+            - "-o"
             - "/shared/alpine.js"
             - "https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"
           volumeMounts:
             - name: shared
               mountPath: /shared
         - name: get-chessfont
-          image: busybox
+          image: yauritux/busybox-curl
           command:
-            - wget
-            - "-O"
+            - curl
+            - "-o"
             - "/shared/alpha2.ttf"
             - "https://raw.githubusercontent.com/mcroitor/chess-fonts/main/ttf/alpha2.ttf"
           volumeMounts:
