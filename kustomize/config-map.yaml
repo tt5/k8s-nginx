@@ -75,9 +75,5 @@ data:
           resolver kube-dns.kube-system.svc.cluster.local valid=5s;
           proxy_pass http://blog-first.projects.svc.cluster.local;
         }
-        location ^~ /events {
-          resolver kube-dns.kube-system.svc.cluster.local valid=5s;
-          proxy_pass http://event-display.rabbitmq.svc.cluster.local;
-        }
       }
     }
